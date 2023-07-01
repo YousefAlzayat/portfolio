@@ -2,17 +2,13 @@
     --bg-color: rgb(20, 20, 20);
     --card-color: rgb(23, 23, 23);
   }
-  
-  /* div {
-    border-radius: 25px;
-  } */
 
   body {
     background-color: #24252a;
     background-color: #171717;
 
   }
-  
+
   #cards {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -22,66 +18,15 @@
     margin-top: 0.5%;
   }
 
-  #picture {
-    grid-row-start: 2;
-    grid-row-end: span 4;
-    grid-column-start: 2;
-    grid-column-end: span 8;
-    border-radius: 25px 25px 10px 25px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* overflow: hidden; */
-  }
-
-  #blog {
-      grid-row-start: 6;
-      grid-row-end: span 3;
-      grid-column-start: 5;
-      grid-column-end: span 6;
-      border-radius: 10px 10px 25px 25px;
-  }
-
-  #cv {
-    grid-row-start: 6;
-    grid-row-end: span 3;
-    grid-column-start: 2;
-    grid-column-end: span 3;
-    border-radius: 25px 10px 25px 25px;
-  }
-
-  #about_me {
-    grid-row-start: 3;
-    grid-row-end: span 3;
-    grid-column-start: 10;
-    grid-column-end: span 3;
-    border-radius: 10px 10px 10px 10px;
-  }
-
-  #projects {
-    grid-row-start: 3;
-    grid-row-end: span 3;
-    grid-column-start: 13;
-    grid-column-end: span 3;
-    border-radius: 10px 25px 25px 10px;
-  }
-
-  #profiles{
-    grid-row-start: 6;
-    grid-row-end: span 3;
-    grid-column-start: 11;
-    grid-column-end: span 5;
-    border-radius: 10px 25px 25px 25px;
-  }
-
-  #cards:hover > .card::after {
-    opacity: 1;
-  }
-  
   .card {
     background-color: rgb(35, 174, 98);
     position: relative;
     margin: 5px;
     grid-row: 1fr;
+  }
+
+  #cards:hover > .card::after {
+    opacity: 1;
   }
   
   .card:hover::before {
@@ -123,7 +68,6 @@
     background-color: var(--card-color);
     border-radius: inherit;
     inset: 1px;
-    /* padding: 10px; */
     position: absolute;
     z-index: 2;
   }
@@ -136,27 +80,101 @@
 
   #picture .card-image {
     grid-column-start: 1;
-    grid-column-end: 2;
-    border-right: 1px solid rgb(35, 174, 98);
-    border-bottom: 1px solid rgb(35, 174, 98);
+    grid-column-end: span 4;
     border-radius: 10% 1% 10% 0%;
     grid-row-start: 1;
-    grid-row-end: span 8;
+    grid-row-end: span 10;
     overflow: hidden;
     align-items: center;
     justify-content: center;
   }
 
   #picture .card-image img {
-    height: 250px;
+    height: 300px;
+    padding-right: 10px;
+    padding-top: 10px;
     width: auto;
+    border-radius: 10% 10% 10% 10%;
   }
-  
-  #picture .card-info-wrapper1 {
+
+  #picture {
+    grid-row-start: 2;
+    grid-row-end: span 4;
+    grid-column-start: 2;
+    grid-column-end: span 2;
+    border-radius: 25px 0px 0px 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-right: 0px;
+    border-right: 0px solid;
+    /* overflow: hidden; */
+  }
+
+  #cv .card-content {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    /* border: 2px solid blue; */
+  }
+
+  #cv .card-image {
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    /* border: 2px solid red; */
+  }
+
+  #cv .card-image img {
+    height: 200px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: auto;
+    border-radius: 10% 10% 10% 10%;
+  }
+
+  #cv {
+    grid-row-start: 6;
+    grid-row-end: span 4;
     grid-column-start: 2;
     grid-column-end: span 3;
-    grid-row-start: 1;
-    grid-row-end: span 10;
+    border-radius: 25px 10px 25px 25px;
+  }
+
+  #about_me {
+    grid-row-start: 2;
+    grid-row-end: span 4;
+    grid-column-start: 4;
+    grid-column-end: span 6;
+    border-radius: 0px 25px 10px 0px;
+    /* border: 2px solid red; */
+    border-left: 0px solid;
+    margin-left: 0px;
+  }
+
+  #blog {
+      grid-row-start: 6;
+      grid-row-end: span 3;
+      grid-column-start: 5;
+      grid-column-end: span 6;
+      border-radius: 10px 10px 25px 25px;
+  }
+
+
+  #projects {
+    grid-row-start: 3;
+    grid-row-end: span 3;
+    grid-column-start: 10;
+    grid-column-end: span 6;
+    border-radius: 10px 25px 25px 10px;
+  }
+
+  #profiles{
+    grid-row-start: 6;
+    grid-row-end: span 3;
+    grid-column-start: 11;
+    grid-column-end: span 5;
+    border-radius: 10px 25px 25px 25px;
   }
 
   #label {
@@ -184,4 +202,8 @@
   #centered-vh{
     color: white;
     text-align: center;
+  }
+
+  h1:hover {
+    color: black;
   }
