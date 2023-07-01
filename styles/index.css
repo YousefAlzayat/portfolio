@@ -28,11 +28,10 @@
     grid-column-start: 2;
     grid-column-end: span 8;
     border-radius: 25px 25px 10px 25px;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     /* overflow: hidden; */
   }
-
-  
 
   #blog {
       grid-row-start: 6;
@@ -123,15 +122,43 @@
   .card > .card-content {
     background-color: var(--card-color);
     border-radius: inherit;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
     inset: 1px;
-    padding: 10px;
+    /* padding: 10px; */
     position: absolute;
     z-index: 2;
   }
   
+  #picture .card-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+
+  #picture .card-image {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-right: 1px solid rgb(35, 174, 98);
+    border-bottom: 1px solid rgb(35, 174, 98);
+    border-radius: 10% 1% 10% 0%;
+    grid-row-start: 1;
+    grid-row-end: span 8;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #picture .card-image img {
+    height: 250px;
+    width: auto;
+  }
+  
+  #picture .card-info-wrapper1 {
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    grid-row-end: span 10;
+  }
+
   #label {
     grid-row-start: 2;
     grid-column-start: 10;
