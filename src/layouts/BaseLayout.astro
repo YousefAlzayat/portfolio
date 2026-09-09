@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Yousef AlZayat - SOC Analyst & Security Researcher" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="min-h-screen flex flex-col font-mono">
+    <!-- Navbar -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+      <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="text-emerald-400 font-bold tracking-wider hover:opacity-80 transition">
+          ~/yousef-alzayat
+        </a>
+        <div class="flex items-center space-x-6 text-sm text-slate-400">
+          <a href="/#about" class="hover:text-slate-100 transition">About</a>
+          <a href="/#certifications" class="hover:text-slate-100 transition">Credentials</a>
+          <a href="/#skills" class="hover:text-slate-100 transition">Skills</a>
+          <a href="mailto:yousefalzayat02@yahoo.com" class="hover:text-slate-100 transition">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Body Slot -->
+    <main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+      <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <span>© {new Date().getFullYear()} Yousef AlZayat. All rights reserved.</span>
+        <div class="flex gap-4">
+          <a href="https://github.com/YousefAlzayat" target="_blank" class="hover:text-slate-300 transition">GitHub</a>
+          <a href="https://linkedin.com/in/yousefalzayat" target="_blank" class="hover:text-slate-300 transition">LinkedIn</a>
+          <a href="mailto:yousefalzayat02@yahoo.com" class="hover:text-slate-300 transition">Email</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
