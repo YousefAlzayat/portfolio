@@ -7,17 +7,11 @@ const experience = [
     company: "Coordinates",
     companyUrl: "https://cor.xyz",
     period: "23 Feb 2026 – Present",
-    metrics: [
-      { label: "Closed Tickets", value: "6k+" },
-      { label: "Client Tenants", value: "15+" },
-      { label: "Coverage", value: "Multi-SIEM / EDR" }
-    ],
-    description: "Operational frontline triage and threat monitoring across 15+ dedicated multi-tenant enterprise environments, maintaining rapid response SLAs and high detection quality.",
+    description: "Monitoring, triage, and multi-tenant security operations handling endpoint and network security telemetry across enterprise client environments.",
     bullets: [
-      "Closed 6,000+ security tickets, performing alert enrichment, false-positive elimination, and incident containment.",
-      "Triaged telemetry across disparate client deployments utilizing FortiSIEM, Microsoft Sentinel, and LogRhythm.",
-      "Investigated process anomalies, lateral movement flags, and malicious scripts via CrowdStrike Falcon, Microsoft Defender for Endpoint (MDE), Cortex XDR, and FireEye HX.",
-      "Coordinated directly with client security teams to deliver rapid containment playbooks and forensic summaries."
+      "Operated and triaged alerts using multiple SIEM Solutions.",
+      "Investigated endpoint anomalies, threat execution, and process telemetry using ",
+      "Performed incident triage, alert enrichment, and artifact extraction for rapid containment."
     ]
   }
 ];
@@ -90,7 +84,7 @@ const skills = {
     <div class="space-y-6">
       {experience.map((job) => (
         <div class="p-6 rounded-lg border border-slate-800 bg-slate-900/40">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-4">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
             <div>
               <h3 class="text-lg font-bold text-white">{job.role}</h3>
               <a href={job.companyUrl} target="_blank" class="text-emerald-400 hover:underline text-sm font-semibold">
@@ -99,17 +93,6 @@ const skills = {
             </div>
             <span class="text-xs font-mono text-slate-400">{job.period}</span>
           </div>
-  
-          <!-- Metric Stat Badges -->
-          <div class="grid grid-cols-3 gap-3 mb-5 font-mono">
-            {job.metrics.map((m) => (
-              <div class="p-2.5 rounded bg-slate-950/60 border border-slate-800 text-center">
-                <div class="text-emerald-400 text-base font-bold">{m.value}</div>
-                <div class="text-[10px] uppercase text-slate-400 tracking-wider">{m.label}</div>
-              </div>
-            ))}
-          </div>
-  
           <p class="text-sm text-slate-300 font-sans mb-4">{job.description}</p>
           <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-400 font-sans">
             {job.bullets.map((bullet) => (
